@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form with js</title>
+
+</head>
+<body>
+
+    <p>Form</p>
+
+    <form id="f">
+
+
+        <div>
+            <label for="n">name</label>
+            <input id="n">
+        </div>
+        
+        <div>
+            <label for="e">email</label>
+            <input id="e">
+        </div>
+    
+        <div>
+            <label for="num">number</label>
+            <input id="num">
+        </div>
+    
+        <button type="submit">submit</button>
+
+
+    </form>
+
+    <script>
+      const form = document.getElementById("f");
+      const name = document.getElementById("n");
+      const email= document.getElementById("e");
+      const number = document.getElementById("num");
+
+      const validateValue = (name,email,number)=>{
+
+        const regex = /^ [a-zA-Z0-9_.±]+@ [a-zA-Z0-9-]+. [a-zA-Z0-9-.]+$/;
+
+        if(regex.match(email)){
+          console.log("valid")
+        } else{
+          console.log("invalid")
+        }
+      }
+
+      form.addEventListener("submit",(e)=>{
+        e.preventDefault()
+        console.log(name.value,email.value,number.value)
+      })
+
+    </script>
+
+    
+</body>
+</html>
